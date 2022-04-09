@@ -1,0 +1,35 @@
+doctype html
+html
+    head
+        title Výsledky
+        link(rel='stylesheet'
+href='https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css')
+
+    body(style ="background-color:black")
+        header.jumbotron-fluid.bg-info.p-3
+            h1.text-center.text-white #{nadpis}
+
+        main.container
+            table(class="table table-black" style="color: white")
+                thead
+                    tr.bg-dark.text-light
+                    th Jméno
+                    th jak se hra líbila
+                    th Datum odehraní 
+                    th Vzdálenost od cíle 
+                tbody
+                    each ukol in ukoly
+                        tr
+                            td #{ukol.ukol}
+                            td #{ukol.predmet}
+                            td #{ukol.zadani}
+                            td #{ukol.odevzdani}
+
+        footer.bg-dark.p-2
+            .container.text-white
+                p.float-right
+                    a(href="/") Zpět na formulář
+                p &copy; 2022 -IT2 -NodeJS
+
+        script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js')
+        script(src='https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js')
